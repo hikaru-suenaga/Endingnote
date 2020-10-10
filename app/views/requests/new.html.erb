@@ -1,0 +1,41 @@
+<div class="note_4_3">
+お願いページ
+<h2>病気になったら</h2><br>
+<%= form_with(model:@request,local:true) do |f| %>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :illness, :size => 140 %>
+    </div>
+    
+    <h2>介護が必要になったら</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :care, :size => 140 %>
+    </div>
+  
+    <h2>財産について</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :property, :size => 140 %>
+    </div>
+  
+    <h2>葬儀について</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :funeral, :size => 140 %>
+    </div>
+  
+    <h2>デジタル関係</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :digital, :size => 140 %>
+    </div>
+    
+    
+    <%= f.submit "投稿する" %>
+  <% end %>
+
+  <%= link_to "お願いページ一覧へ", mylives_path %>
+  <%= link_to "ホームへ戻る", users_path %>
+  
+  

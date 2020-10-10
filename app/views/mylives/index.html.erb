@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/mylives.scss"><!--これであってるのか？-->
+  </head>
+
+
+  <div class="note_2_1">
+<% @mylives.each do |m| %>
+    
+    <%= link_to "投稿する", new_mylife_path %><br><br>
+    
+    <%= m.profile %><br>
+    <%= m.family %><br>
+    <%= m.life %><br>
+    <%= m.todo %><br>
+    <%= m.memories %><br>
+    <%= m.gallery %><br>
+    <%= link_to "ホームへ戻る", users_path %><br>
+    
+    <% if user_signed_in? && current_user.id == m.user_id %>  
+    <%= link_to "編集する", edit_mylife_path(m.id) %><br>
+    <%= button_to "削除する", mylife_path(m.id), method: :delete %>
+   
+
+
+  </div>  
+    <% end %>
+    <% end %>

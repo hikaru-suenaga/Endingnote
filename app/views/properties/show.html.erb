@@ -1,0 +1,40 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/mylives.scss"><!--これであってるのか？-->
+  </head>
+
+  <div class="note_3_2">
+
+
+財産ページ
+<h2>口座</h2><br>
+<%= @property.account %> 
+
+<h2>残額</h2><br>
+<%= @property.balance %> 
+
+<h2>不動産</h2><br>
+<%= @property.real_estate %> 
+
+<h2>価値</h2><br>
+<%= @property.value %> 
+
+<h2>保険</h2><br>
+<%= @property.insurance %> 
+
+<h2>受け取り金額</h2><br>
+<%= @property.insurance_proceeds %> 
+
+<h2>負債</h2><br>
+<%= @property.debt %> 
+
+<h2>負債金額</h2><br>
+<%= @property.debt_amount %> <br>
+
+<%= link_to "編集する", edit_property_path(@property.id) %>
+<%= link_to "投稿する", new_property_path(@property.id) %>
+<%= link_to "財産ページ一覧へ", properties_path %>
+<%= link_to 'ホームへ戻る', new_user_session_path %>

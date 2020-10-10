@@ -1,0 +1,46 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/requests.scss"><!--これであってるのか？-->
+  </head>
+
+<div class="note_4_4">
+お願いページ
+<h2>病気になったら</h2><br>
+<%= form_with(model:@request,local:true) do |f| %>
+  
+  <div class="field">
+  <%= f.label :body %>
+  <%= f.text_field :illness, :size => 140 %>
+  </div>
+  
+  <h2>介護が必要になったら</h2><br>
+  <div class="field">
+  <%= f.label :body %>
+  <%= f.text_field :care, :size => 140 %>
+  </div>
+
+  <h2>財産について</h2><br>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :property, :size => 140 %>
+  </div>
+
+  <h2>葬儀について</h2><br>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :funeral, :size => 140 %>
+  </div>
+
+  <h2>デジタル関係</h2><br>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :digital, :size => 140 %>
+  </div>
+  
+  
+  <%= f.submit "投稿する" %>
+<% end %>
+<%= link_to "ホームへ戻る", users_path %><br>

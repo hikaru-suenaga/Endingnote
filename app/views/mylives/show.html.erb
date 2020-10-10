@@ -1,0 +1,36 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/mylives.scss"><!--これであってるのか？-->
+  </head>
+
+  <div class="note_2_2">
+私の人生ページ
+<h2>プロフィール</h2><br>
+<%= @mylife.profile %> 
+
+<h2>家族</h2><br>
+<%= @mylife.family %> 
+
+<h2>人生</h2><br>
+<%= @mylife.life %> 
+
+<h2>死ぬまでにやりたいこと</h2><br>
+<%= @mylife.todo %> 
+
+<h2>思い出</h2><br>
+<%= @mylife.memories %> 
+
+<h2>ギャラリー</h2><br>
+<%= image_tag(@mylife.gallery_url, width: 100) if @mylife.gallery.present? %><br>
+
+
+
+<%= link_to "編集する", edit_mylife_path(@mylife.id) %>
+<%= link_to "投稿する", new_mylife_path(@mylife.id) %>
+<%= link_to "わたしの人生ページ一覧へ", mylives_path %>
+<%= link_to 'ホームへ戻る', new_user_session_path %>
+
+</div>

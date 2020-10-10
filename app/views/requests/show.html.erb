@@ -1,0 +1,32 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/requests.scss"><!--これであってるのか？-->
+  </head>
+
+<div class="note_4_2">
+
+お願いページ
+<h2>病気になったら</h2><br>
+<%= @request.illness %> 
+
+<h2>介護が必要になったら</h2><br>
+<%= @request.care %> 
+
+<h2>財産について</h2><br>
+<%= @request.property %> 
+
+<h2>葬儀について</h2><br>
+<%= @request.funeral %> 
+
+<h2>デジタル関係</h2><br>
+<%= @request.digital %> <br>
+
+
+
+<%= link_to "編集する", edit_request_path(@request.id) %>
+<%= link_to "投稿する", new_property_path(@request.id) %>
+<%= link_to "お願いページ一覧へ", requests_path %>
+<%= link_to 'ホームへ戻る', new_user_session_path %>

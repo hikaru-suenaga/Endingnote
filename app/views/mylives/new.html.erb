@@ -1,0 +1,50 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/mylives.scss"><!--これであってるのか？-->
+  </head>
+
+
+<div class="note_2_3">
+私の人生ページ
+<h2>プロフィール</h2><br>
+<%= form_with(model:@mylife,local:true) do |f| %>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :profile, :size => 140 %>
+    </div>
+    
+    <h2>家族</h2><br>
+    <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :family, :size => 140 %>
+    </div>
+  
+    <h2>死ぬまでにやりたいこと</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :todo, :size => 140 %>
+    </div>
+  
+    <h2>思い出</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :memories, :size => 140 %>
+    </div>
+  
+    <h2>ギャラリー</h2><br>
+    
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :gallery, :size => 140 %>
+    </div>
+  
+    <%= f.submit "投稿する" %>
+  <% end %>
+
+  <%= link_to "私の人生ページ一覧へ", mylives_path %>
+  <%= link_to "ホームへ戻る", users_path %>
+  
+  </div>

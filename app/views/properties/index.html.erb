@@ -1,0 +1,33 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/properties.scss"><!--これであってるのか？-->
+  </head>
+
+
+  <div class="note_3_1">
+<% @properties.each do |p| %>
+    
+    <%= link_to "投稿する", new_property_path %><br><br>
+    
+    <%= p.account %><br>
+    <%= p. balance %><br>
+    <%= p.real_estate %><br>
+    <%= p.value %><br>
+    <%= p.insurance %><br>
+    <%= p.insurance_proceeds %><br>
+    <%= p.debt %><br>
+    <%= p.debt_amount %><br>
+    <%= link_to "ホームへ戻る", users_path %><br>
+   
+    <% if user_signed_in? && current_user.id == p.user_id %>  
+    <%= link_to "編集する", edit_property_path(p.id) %><br>
+    <%= button_to "削除する", property_path(p.id), method: :delete %>
+   
+    
+
+   </div> 
+    <% end %>
+    <% end %>

@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/mylives.scss"><!--これであってるのか？-->
+  </head>
+
+  <div class="note_3_3">
+
+
+私の持ち物ページ
+<h2>口座</h2><br>
+<%= form_with(model:@property,local:true) do |f| %>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :account, :size => 140 %>
+    </div>
+    
+    <h2>残額</h2><br>
+    <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :balance, :size => 140 %>
+    </div>
+  
+    <h2>不動産</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :real_estate, :size => 140 %>
+    </div>
+  
+    <h2>価値</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :value, :size => 140 %>
+    </div>
+  
+    <h2>保険</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :insurance, :size => 140 %>
+    </div>
+    
+    <h2>受け取り金額</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :insurance_proceeds, :size => 140 %>
+    </div>
+   
+    <h2>負債</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :debt, :size => 140 %>
+    </div>
+    
+    <h2>負債額</h2><br>
+    <div class="field">
+      <%= f.label :body %>
+      <%= f.text_area :debt_amount, :size => 140 %>
+    </div>
+  
+
+
+    <%= f.submit "投稿する" %>
+  <% end %>
+
+  <%= link_to "財産ページ一覧へ", mylives_path %>
+  <%= link_to "ホームへ戻る", users_path %>
+  
+  

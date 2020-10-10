@@ -1,0 +1,43 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    # <link rel="stylesheet"href="stylesheets/messages.scss" ><!--この一文なくても良さそう-->
+  </head>
+
+  <div class="note_1_1">  
+<% @messages.each do |m| %>
+
+  
+        <div class="note_1">
+
+        <div id="container">
+        <div id="main">
+              <%= link_to "投稿する", new_message_path %><br><br>
+    
+                  <div class="card" style="width: 18rem;">
+                  <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text"></p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+
+
+                <%= m.title %><br>
+                <%= m.body %><br>
+                <%= link_to "ホームへ戻る", users_path %><br>
+          
+                <% if user_signed_in? && current_user.id == m.user_id %>  
+                <%= link_to "編集する", edit_message_path(m.id) %><br>
+                <%= button_to "削除する", message_path(m.id), method: :delete %>
+
+
+        </div>
+      </div>
+   </div>
+  
+<% end %>
+<% end %>

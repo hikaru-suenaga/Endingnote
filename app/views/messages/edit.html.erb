@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/messages.scss"><!--これであってるのか？-->
+  </head>
+
+  <div class="note_1_4">  
+
+
+個別メッセージページ
+<h2>タイトル</h2><br>
+<%= form_with(model:@message,local:true) do |f| %>
+    
+    <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :title, :size => 140 %>
+    </div>
+    
+    <h2>内容</h2><br>
+    <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :body, :size => 140 %>
+    </div>
+  
+        
+    <%= f.submit "投稿する" %>
+  <% end %>
+
+  <%= link_to 'ホームへ戻る', new_user_session_path %>

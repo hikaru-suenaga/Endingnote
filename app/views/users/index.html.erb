@@ -1,0 +1,33 @@
+<!--ここはログインしているときの表紙 -->
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+    
+    <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+        <meta charset="utf-8">
+        <title></title><!--ブラウザのタブのタイトルを指定-->
+        <link rel="stylesheet" href="../../../../../../../../../stylesheets/users.scss"><!--これであってるのか-->
+    </head>
+  
+  
+        <body>
+                   
+       
+                    <!-- <image src="./users/images/gold1.png" class="image"> -->
+                 
+                    <!--赤枠-->
+                    <div class="main">
+            
+                     <!--黄枠-->
+                    <div class="container">
+                    <h1><span>Ending Note</span></h1>
+             
+                    <!--緑枠-->
+                    <div class="about">
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %><br>
+        </body>
+
+</html>
+
+
+
+

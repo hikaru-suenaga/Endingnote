@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!--　この文章がHTML文章であることを伝える要素です。-->
+<html lang="ja"><!--言語の指定-->
+  <head><!--ページに表示されない情報(サイトの裏側の設定)-->
+    <meta charset="utf-8">
+    <title></title><!--ブラウザのタブのタイトルを指定-->
+    <link rel="stylesheet" href="../../../../../../../../../stylesheets/requests.scss"><!--これであってるのか？-->
+  </head>
+
+
+  <div class="note_4_1">
+
+  <% @requests.each do |r| %>
+
+    <%= link_to "投稿する", new_request_path %><br><br>
+    
+    <%= r.illness %><br>
+    <%= r.care  %><br>
+    <%= r.property  %><br>
+    <%= r.funeral  %><br>
+    <%= r.digital  %><br>
+    <%= link_to "ホームへ戻る", users_path %><br>
+    
+    <% if user_signed_in? && current_user.id == r.user_id %>  
+    <%= link_to "編集する", edit_request_path(r.id) %><br>
+    <%= button_to "削除する", request_path(r.id), method: :delete %>
+    
+
+
+  </div>  
+    <% end %>
+    <% end %>
